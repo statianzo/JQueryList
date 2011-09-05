@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Knockout List</title>
+    <link type="text/css" rel="stylesheet" href="todos.css" />
+  </head>
+  <body>
+    <div id="todoapp">
+      <div class="title">
+        <h1>Knockout List</h1>
+      </div>
+      <form id="create-todo">
+        <input id="new-todo" placeholder="What needs to be done?" type="text" />
+        <span class="ui-tooltip-top" style="display:none;">Press Enter to save this task</span>
+      </form>
+      <ul id="todo-list"></ul>
+      <div id="todo-stats">
+        <span class="todo-count">
+          <span id="remaining-count"></span>
+          <span id="remaining-count-word"></span> left.
+        </span>
+
+        <span class="todo-clear">
+          <a href="#">
+            Clear <span id="completed-count"></span>
+            completed <span id="completed-count-word"></span>
+          </a>
+        </span>
+      </div>
+    </div>
+
+    <div id="credits">
+      <a href="http://documentcloud.github.com/backbone/examples/todos/index.html">Todos</a> Originally Created by
+        <br />
+        <a href="http://jgn.me/">J&eacute;r&ocirc;me Gravel-Niquet</a>
+    </div>
+
+    <script type="text/x-jquery-tmpl" id="viewItem">
+      <li class="todo ${complete ? 'complete' : ''}">
+        <input class="check" type="checkbox" />
+        <span class="todo-text">${text}</span>
+        <span class="todo-destroy"></span>
+      </li>
+    </script>
+    <script type="text/x-jquery-tmpl" id="editItem">
+      <li class="todo editing">
+        <form>
+            <input class="todo-input" type="text" />
+        </form>
+      </li>
+    </script>
+    <script type="text/x-jquery-tmpl" id="stats">
+    </script>
+    <script src="script/jquery-1.6.2.min.js"></script>
+    <script src="script/jquery.tmpl.min.js"></script>
+    <script src="script/app.js"></script>
+  </body>
+</html>
